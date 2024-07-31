@@ -9,7 +9,7 @@
 7. There are two compose.yml files. docker-compose-new.yml is for the images pulled from docker hub.
 8. With docker-compose-new.yml file we dont need to build images seperately on local system.
 
-# CI/CD pipeline working
+# CI/CD workflow
 
 1. Github actions setup on this repo and it triggers whener there is push and merge to main branch
 2. **Pipeline creates the Docker image for respective microservice and pushes it to docker hub**
@@ -19,6 +19,12 @@
    [product-service](https://hub.docker.com/r/pranavsw2004/product-service)
 4. You can pull specific image from docker hub with command `docker pull pranavsw2004/order-service`
 5. deply.sh script pull all the images and compose file too
+
+
+## Working of CICD workflow actions
+All the workflows are successful
+![Image4](/demo/iamge5.png)
+
 
 # Working Demo SS
 
