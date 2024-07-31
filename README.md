@@ -23,7 +23,7 @@
 
 ## Working of CICD workflow actions
 All the workflows are successful
-![Image4](/demo/iamge5.png)
+![Image4](/demo/image5.png)
 
 
 # Working Demo SS
