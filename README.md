@@ -6,8 +6,10 @@
 4. **Run the deploy.sh with `./deploy.sh`**
 5. *Then after run deploy.log file will be created with all the log massages*
 
+# Working Demo SS
 
-
+1. Giving executable permissions
+   ![Image1](/demo/Screenshot from 2024-08-01 01-47-35.png)
 
 Basic Microservices for Online Shopping Platform
 
