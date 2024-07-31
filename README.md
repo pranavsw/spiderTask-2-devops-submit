@@ -7,7 +7,14 @@
 5. *Then after run deploy.log file will be created with all the log messages*
 6. Test command for user service: `curl -X POST http://localhost:3001/users/register -H "Content-Type: application/json" -d '{"name":"pranav", "email":"pranav@example.com", "password":"pranav"}'`
 
+# CI/CD pipeline working
 
+1. Github actions setup on this repo and it triggers whener there is push and merge to main branch
+2. **Pipeline creates the Docker image for respective microservice and pushes it to docker hub**
+3. All the latest pushed images are available at :
+   [order-service](https://hub.docker.com/r/pranavsw2004/order-service)
+   [user-service](https://hub.docker.com/r/pranavsw2004/user-service)
+   [product-service](https://hub.docker.com/r/pranavsw2004/product-service)
 
 # Working Demo SS
 
@@ -17,18 +24,5 @@
    ![Image2](/demo/image3.png)
 3. Output
    ![Image3](/demo/image2.png)
-
-
-Basic Microservices for Online Shopping Platform
-
-Make sure all three services are running fine locally before doing anything. Also, here we are using RabbitMq and Reddis too so set them up locally so you would not face any issues while running the APIs locally.
-
--> ALso change the .env.ex to .env in all three services so it can connect to the database.
-
-Test command for user service: curl -X POST http://localhost:3001/users/register -H "Content-Type: application/json" -d '{"name":"", "email":"@example.com", "password":""}'
-
-Use the above command to test whether the user service is working fine. 
-
-
 
 
