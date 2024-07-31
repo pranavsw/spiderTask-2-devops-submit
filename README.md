@@ -4,12 +4,17 @@
 2. Change cwd to corresponding directory
 3. Make the deploy.sh file executable with cammand `chmod +x deploy.sh`
 4. **Run the deploy.sh with `./deploy.sh`**
-5. *Then after run deploy.log file will be created with all the log massages*
+5. *Then after run deploy.log file will be created with all the log messages*
 
 # Working Demo SS
 
 1. Giving executable permissions
-   ![Image1](/demo/Screenshot from 2024-08-01 01-47-35.png)
+   ![Image1](/demo/image.png)
+2. Running deploy.sh
+   ![Image2](/demo/image2.png)
+3. Output
+   ![Image3](/demo/image3.png)
+
 
 Basic Microservices for Online Shopping Platform
 
