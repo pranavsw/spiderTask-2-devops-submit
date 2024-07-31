@@ -1,1 +1,35 @@
+name: CI/CD
 
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build User Service
+      run: |
+        docker build -t user-service user-service/
+        docker push user-service:latest
+    
+    - name: Build Product Service 
+      run: |
+        docker build -t product-service product-service/
+        docker push product-service:latest
+    
+    - name: Build Order Service
+      run: |
+        docker build -t order-service order-service/
+        docker push order-service:latest
+    
+    - name: Deploy
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_REPOSITORY: pranavsw2004/spider-ecommerse-website
+        
