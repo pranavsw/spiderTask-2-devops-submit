@@ -1,0 +1,55 @@
+services:
+  user-service:
+    image: pranavsw2004/user-service:latest
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/users
+      - RABBITMQ_URI=amqp://rabbitmq
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - rabbitmq
+      - redis
+
+  product-service:
+    image: pranavsw2004/product-service:latest
+    ports:
+      - "3002:3002"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/products
+      - RABBITMQ_URI=amqp://rabbitmq
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - rabbitmq
+      - redis
+
+  order-service:
+    image: pranavsw2004/order-service:latest
+    ports:
+      - "3003:3003"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/carts
+      - RABBITMQ_URI=amqp://rabbitmq
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - mongo
+      - rabbitmq
+      - redis
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5673:5672"   # using RabbitMQ port 5673 because for some reason 5672 is blocked in my system
+      - "15673:15672" # RabbitMQ management console (using 15673 because 15672 it is blocked)
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
