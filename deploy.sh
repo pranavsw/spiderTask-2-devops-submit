@@ -27,17 +27,17 @@ log_message "Starting deployment..."
 
 # Pull the latest images
 log_message "Pulling latest Docker images..."
-docker pull $DOCKER_USERNAME/user-service:$IMAGE_TAG
-docker pull $DOCKER_USERNAME/product-service:$IMAGE_TAG
-docker pull $DOCKER_USERNAME/order-service:$IMAGE_TAG
+sudo docker pull $DOCKER_USERNAME/user-service:$IMAGE_TAG
+sudo docker pull $DOCKER_USERNAME/product-service:$IMAGE_TAG
+sudo docker pull $DOCKER_USERNAME/order-service:$IMAGE_TAG
 
 # Restart services
 log_message "Restarting Docker Compose services..."
-docker-compose -f $DOCKER_COMPOSE_FILE down
-docker-compose -f $DOCKER_COMPOSE_FILE up -d
+sudo docker compose -f $DOCKER_COMPOSE_FILE down
+sudo docker compose -f $DOCKER_COMPOSE_FILE up -d
 
 # Check Docker Compose status
 log_message "Checking Docker Compose status..."
-docker-compose -f $DOCKER_COMPOSE_FILE ps
+sudo docker compose -f $DOCKER_COMPOSE_FILE ps
 
 log_message "Deployment completed successfully."
