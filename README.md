@@ -5,15 +5,18 @@
 3. Make the deploy.sh file executable with cammand `chmod +x deploy.sh`
 4. **Run the deploy.sh with `./deploy.sh`**
 5. *Then after run deploy.log file will be created with all the log messages*
+6. Test command for user service: `curl -X POST http://localhost:3001/users/register -H "Content-Type: application/json" -d '{"name":"pranav", "email":"pranav@example.com", "password":"pranav"}'`
+
+
 
 # Working Demo SS
 
 1. Giving executable permissions
    ![Image1](/demo/image.png)
 2. Running deploy.sh
-   ![Image2](/demo/image2.png)
+   ![Image2](/demo/image3.png)
 3. Output
-   ![Image3](/demo/image3.png)
+   ![Image3](/demo/image2.png)
 
 
 Basic Microservices for Online Shopping Platform
