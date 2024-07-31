@@ -6,6 +6,8 @@
 4. **Run the deploy.sh with `./deploy.sh`**
 5. *Then after run deploy.log file will be created with all the log messages*
 6. Test command for user service: `curl -X POST http://localhost:3001/users/register -H "Content-Type: application/json" -d '{"name":"pranav", "email":"pranav@example.com", "password":"pranav"}'`
+7. There are two compose.yml files. docker-compose-new.yml is for the images pulled from docker hub.
+8. With docker-compose-new.yml file we dont need to build images seperately on local system.
 
 # CI/CD pipeline working
 
@@ -15,6 +17,8 @@
    [order-service](https://hub.docker.com/r/pranavsw2004/order-service)
    [user-service](https://hub.docker.com/r/pranavsw2004/user-service)
    [product-service](https://hub.docker.com/r/pranavsw2004/product-service)
+4. You can pull specific image from docker hub with command `docker pull pranavsw2004/order-service`
+5. deply.sh script pull all the images and compose file too
 
 # Working Demo SS
 
