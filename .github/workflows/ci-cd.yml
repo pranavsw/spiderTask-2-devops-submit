@@ -21,15 +21,15 @@ jobs:
 
       - name: Build and push User Service
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/spider-ecommerse-website/user-service:latest user-service/
-          docker push ${{ secrets.DOCKER_USERNAME }}/spider-ecommerse-website/user-service:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/user-service:latest user-service/
+          docker push ${{ secrets.DOCKER_USERNAME }}/user-service:latest
 
       - name: Build and push Product Service
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/spider-ecommerse-website/product-service:latest product-service/
-          docker push ${{ secrets.DOCKER_USERNAME }}/spider-ecommerse-website/product-service:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/product-service:latest product-service/
+          docker push ${{ secrets.DOCKER_USERNAME }}/product-service:latest
 
       - name: Build and push Order Service
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/spider-ecommerse-website/order-service:latest order-service/
-          docker push ${{ secrets.DOCKER_USERNAME }}/spider-ecommerse-website/order-service:latest
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/order-service:latest order-service/
+          docker push ${{ secrets.DOCKER_USERNAME }}/order-service:latest
